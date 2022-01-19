@@ -10,21 +10,24 @@ export default class ViewFilter {
     this.renderGenresFilter();
     this.addListeners(this.handleFilterClick);
   }
+
   addListeners(listener) {
-    [...document.querySelectorAll(this.GENRES_FILTER_SELECTOR)].forEach(
-      (checkbox) => checkbox.addEventListener("click", listener)
-    );
+    console.log(listener); //handleFilterClick
+    document.querySelector(".genres").addEventListener("click", listener);
+    // [...document.querySelectorAll(this.GENRES_FILTER_SELECTOR)].forEach(
+    //   (checkbox) => checkbox.addEventListener("click", listener)
+    // );
   }
 
   renderGenresFilter() {
     const checkboxGenres = `
-        <section class="genres" data-btn='checkbox_genres'>
+        <section class="genres" >
           Жанры
           <div class="form-check">
             <input
               class="form-check-input genres"
               type="checkbox"
-              value="novel"
+              value="роман"
               id="flexCheckDefault"
               data-btn='checkbox_genres'
             />
@@ -130,6 +133,7 @@ export default class ViewFilter {
             </label>
           </div>
         </section>`;
+    console.log(checkboxGenres);
     this.BODY_HEADER.insertAdjacentHTML("afterbegin", checkboxGenres);
   }
 }

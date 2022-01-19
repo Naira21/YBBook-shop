@@ -6,9 +6,12 @@ export default class ControllerFilter {
     this.handleFilterByContrCards = handleFilterByContrCards;
     this.view.init();
   }
+
   handleFilterClick(e) {
-    console.log("handleFilterClick", this);
     const filterType = e.target.value;
+    if (e.target.value === undefined) {
+      return;
+    }
     this.handleFilterByContrCards(filterType);
   }
 }

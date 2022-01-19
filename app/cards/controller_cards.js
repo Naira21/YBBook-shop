@@ -19,8 +19,18 @@ export default class ControllerCards {
   }
 
   handleFilter(filterType) {
-    console.log(this, filterType);
-    const data = this.model.filterData(filterType);
+    console.log("filterType", filterType); //drama, satira
+    console.log("model", this.model); //data:[{}, {}]
+
+    // for (const book of this.model.data) {
+    //   console.log("genre", book.genre);
+    //   const genre = book.genre;
+    //   const data = genre.filterData(filterType);
+    //   this.view.renderCards(data);
+    // }
+    const data = this.model.data.filterData(filterType);
+    console.log(data);
+
     this.view.renderCards(data);
   }
 }

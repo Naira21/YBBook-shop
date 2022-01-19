@@ -35,20 +35,10 @@ export default class ModelCards {
   }
 
   filterData(filterType) {
-    // const filterVoc = {
-    //   novel: 1,
-    //   sf: 1,
-    //   satire: 1,
-    //   parable: 1,
-    //   story: 1,
-    //   drama: 1,
-    //   fantasy: 1,
-    //   fairytale: 1,
-    //   essay: 1,
-    // };
-    const filteredData = this.data.filter(
-      (d) => d.genres === filterType
-    );
-    return filteredData;
+    console.log("data in model cards", this.data);
+
+    return this.data.filter((d) => d.genres === filterType);
   }
 }
+
+//d.price>150 || d.price<250
