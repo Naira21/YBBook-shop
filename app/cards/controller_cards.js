@@ -28,7 +28,7 @@ export default class ControllerCards {
     //   const data = genre.filterData(filterType);
     //   this.view.renderCards(data);
     // }
-    const data = this.model.data.filterData(filterType);
+    const data = this.model.filterData(filterType);
     console.log(data);
 
     this.view.renderCards(data);

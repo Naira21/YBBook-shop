@@ -40,5 +40,3 @@ export default class ModelCards {
     return this.data.filter((d) => d.genres === filterType);
   }
 }
-
-//d.price>150 || d.price<250
