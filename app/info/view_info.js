@@ -7,21 +7,13 @@ export default class ViewInfo {
       },
       {
          selector: '.form-modal-phone',
-         reg: /\+380(\d{2})[-\. ]?(\d{3})[-\. ]?(\d{2})[-\. ]?(\d{2})[-\. ]?/g,
+         reg: /\+380(\d{2})[-\. ]?(\d{3})[-\. ]?(\d{2})[-\. ]?(\d{2})/g,
       },
       {
          selector: '.form-modal-email',
          reg: /([a-z0-9]+\.?)+[a-z0-9]+@[a-z]+\.[a-z0-9]+/gi,
       }
    ]
-
-   constructor(sendOrderInfo) {
-      this.sendOrderInfo = sendOrderInfo;
-   }
-
-   init() {
-      this.addListener(this.sendOrderInfo)
-   }
 
    addListener = (listener) => {
       document.querySelector('.form-modal-button').addEventListener('click', listener);
